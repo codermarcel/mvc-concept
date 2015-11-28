@@ -3,32 +3,15 @@
 /**
 * User
 */
-class User implements \ArrayAccess
+class User
 {
-    use Traits\AccessibleProperties;
-    
-    private $id;
-    private $email;
-    private $password;
+    public $id;
+    public $email;
+    public $password;
 
     public function __construct($email, $password)
     {
-        $this->setEmail($email);
-        $this->setPassword($password);
-    }
-
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    public function setEmail($email)
-    {
         $this->email = $email;
-    }
-
-    public function setPassword($password)
-    {
         $this->password = sha1($password);
     }
 }
